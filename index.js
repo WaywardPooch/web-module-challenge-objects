@@ -34,6 +34,11 @@ Test your createMenuItems function by doing the following:
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
 
+console.log("Task 1B:");
+console.log("Menu Item 1: ", createMenuItem("Smallsie Wrap", 3, "Breakfast"));
+console.log("Menu Item 2: ", createMenuItem("Tiny Meal", 5, "Lunch"));
+console.log("Menu Item 3: ", createMenuItem("Micro Nuggets", 1, "Snack"));
+
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to the 
 burger object below that automatically calculates price depending on the a string received as a parameter. 

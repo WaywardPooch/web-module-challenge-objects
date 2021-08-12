@@ -236,11 +236,11 @@ Use the getReviewsByRating function below to do the following:
 */
 
 function getReviewByRating(reviewArray, minRating) {
-  // Create a new filtered array to store updates
+  // Create a new (empty) 'filtered array' to store updates
   const filteredReviews = [];
-  // Loop through the array to check each review
+  // Loop through the array to check each review inside
   for (let i = 0; i < reviewArray.length; i++) {
-    // If the review score at the current index is >= the minRating
+    // If the review score at the current index is >= the minRating...
     if (reviewArray[i].rating >= minRating) {
       // Add that review to the filtered array
       filteredReviews.push(reviewArray[i]);
@@ -269,9 +269,39 @@ Use the getLongReviews function below to do the following:
   ]
 */
 
-function getLongReviews(/* code here */) {
-  /* code here */
+// Create a helper function to count the number of words in a string
+function getWordCount(string) {
+  // Split the input string by its spaces, and store each word in a new array
+  const wordsInString = string.split(" ");
+  // Return the number of words in the string
+  return wordsInString.length;
 }
+
+/* 
+Check to see if the word counting function is working
+console.log(
+  "Stretch 2: Word count in string 'bubblegum was chewed':",
+  getWordCount("bubblegum was chewed")
+);
+*/
+
+function getLongReviews(reviewArray) {
+  // Create an empty array to store long reviews
+  const filteredReviews = [];
+  // Loop through the review array to check the length of each review
+  for (let i = 0; i < reviewArray.length; i++) {
+    // If the review at the current index has more than 15 words...
+    if (getWordCount(reviewArray[i].feedback) > 15) {
+      // Add that review to the filtered review list
+      filteredReviews.push(reviewArray[i]);
+    }
+  }
+  // Return the filtered list
+  return filteredReviews;
+}
+
+// Log all reviews longer than 15 words
+console.log("Stretch 2: List of long reviews...", getLongReviews(reviews));
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 
 This stretch goal does not use the reviews data!  You create your own object in this stretch goal.

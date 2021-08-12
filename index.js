@@ -89,7 +89,11 @@ const reviews = [
     feedback:
       "A little too hipster for my taste, but the burger was decent, if overpriced",
   },
-  { name: "Miranda", rating: 4, feedback: "fun trivia and cool vibes" },
+  {
+    name: "Miranda",
+    rating: 4,
+    feedback: "fun trivia and cool vibes",
+  },
   {
     name: "Wen",
     rating: 4.5,
@@ -121,6 +125,8 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
+
+console.log("Task 3: Julius' feedback was...", reviews[6].feedback);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Reyna's feedback is missing! Use what you know to do the following: (no function needed) 

@@ -149,7 +149,7 @@ Write a function that creates an object with name, rating, feedback, add the new
 
 function addReview(array, name, rating, feedback) {
   // Make a copy of the input array for updating
-  const updatedReviews = array;
+  const updatedReviews = [...array];
   // Push a new review object into the array
   updatedReviews.push({ name, rating, feedback });
   // Return the updated array
@@ -161,9 +161,9 @@ console.log(
   "Task 5: New Review Array",
   addReview(
     reviews,
-    "Johnny Cage",
+    "Daniela",
     5,
-    "I get to do my signature flippy-kick indoors during afternoons, and they don't kick me out; perfect!"
+    "Beautiful atmosphere and wonderful vegan options!"
   )
 );
 
@@ -190,8 +190,8 @@ function getReviewByIndex(array, index) {
   );
 }
 
-// Test to see if the function can fetch the last review
-console.log("Task 6:", getReviewByIndex(reviews, reviews.length - 1));
+// Test to see if the function can fetch the 5th review
+console.log("Task 6:", getReviewByIndex(reviews, 4));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Write a function to get information about the most recent (last) review called `getLastReview`
@@ -204,9 +204,20 @@ Use the getLastReview function below to do the following:
   For example: getLastReview(reviews) would return: "Reyna gave the restaurant a 3.5 star review, and their feedback was: this place is chill with really cool people, great for getting work done on weekdays".
 */
 
-function getLastReview(/*Your code here*/) {
-  /*Your code here*/
+function getLastReview(array) {
+  return (
+    // Name
+    array[array.length - 1].name +
+    " gave the restaurant a " +
+    // Rating
+    array[array.length - 1].rating +
+    " star review, and their feedback was: " +
+    // Feedback
+    array[array.length - 1].feedback
+  );
 }
+// Test to see if the function can fetch the last review
+console.log("Task 7:", getLastReview(reviews));
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
 

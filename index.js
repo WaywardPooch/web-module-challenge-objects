@@ -51,11 +51,30 @@ Using the burger object below do the following:
 
   For example: burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2
 */
+
 const burger = {
   name: "Burger",
   price: 18,
   category: "Lunch",
 };
+
+burger.discount = function (string) {
+  // If the buyer is a student or teacher...
+  if (string === "teacher" || string === "student") {
+    // They pay 75% of full price
+    return this.price * 0.75;
+    // If they are not a student or teacher...
+  } else {
+    // They pay 90% of full price
+    return this.price * 0.9;
+  }
+};
+
+// Check the cost of a burger for a student
+console.log(
+  "Task 2: A burger for a student would cost $",
+  burger.discount("student")
+);
 
 ///////////////Reviews (MVP)///////////////////
 const reviews = [

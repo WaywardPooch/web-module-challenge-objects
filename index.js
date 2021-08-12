@@ -190,8 +190,8 @@ function getReviewByIndex(array, index) {
   );
 }
 
-// Test to see if the function can fetch the 5th review
-console.log("Task 6:", getReviewByIndex(reviews, 4));
+// Test to see if the function can fetch the 1st review
+console.log("Task 6:", getReviewByIndex(reviews, 0));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Write a function to get information about the most recent (last) review called `getLastReview`
@@ -235,9 +235,26 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
-function getReviewByRating(/* code here */) {
-  /* code here */
+function getReviewByRating(reviewArray, minRating) {
+  // Create a new filtered array to store updates
+  const filteredReviews = [];
+  // Loop through the array to check each review
+  for (let i = 0; i < reviewArray.length; i++) {
+    // If the review score at the current index is >= the minRating
+    if (reviewArray[i].rating >= minRating) {
+      // Add that review to the filtered array
+      filteredReviews.push(reviewArray[i]);
+    }
+  }
+  // Return the filtered array
+  return filteredReviews;
 }
+
+// Test the score-filtered reviews function
+console.log(
+  "Stretch 1: Reviews with a score greater than or equal to 4 stars",
+  getReviewByRating(reviews, 4)
+);
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
 Use the getLongReviews function below to do the following:

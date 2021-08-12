@@ -177,9 +177,21 @@ Use the getReviewByIndex function below to do the following:
   For example: getReviewByIndex(reviews,0) would return: "Daniela gave the restaurant a 5 star review, and their feedback was: Beautiful atmosphere and wonderful vegan options!"
 */
 
-function getReviewByIndex(/*Your code here*/) {
-  /*Your code here*/
+function getReviewByIndex(array, index) {
+  return (
+    // Name
+    array[index].name +
+    " gave the restaurant a " +
+    // Rating
+    array[index].rating +
+    " star review, and their feedback was: " +
+    // Feedback
+    array[index].feedback
+  );
 }
+
+// Test to see if the function can fetch the last review
+console.log("Task 6:", getReviewByIndex(reviews, reviews.length - 1));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Write a function to get information about the most recent (last) review called `getLastReview`

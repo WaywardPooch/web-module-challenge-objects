@@ -320,9 +320,29 @@ Use the carMaker function below to do the following:
   It would return 110 because it was created with 10 as the odometer and we added 100 to it with the drive method 
 */
 
-function carMaker(/* code here */) {
-  /* code here */
+// Accept an initial odometer reading
+function carMaker(initialOdometer) {
+  // Return the car as an object
+  return {
+    // Set the initial milage to the initial odometer reading
+    milage: initialOdometer,
+    // Create the drive() method, accepting a number of miles to 'drive'
+    drive: function (miles) {
+      // Add the miles driven to the odometer
+      this.milage += miles;
+      // Return the new milage of the car
+      return this.milage;
+    },
+  };
 }
+
+// Store the car object in a variable
+const corvette = carMaker(50);
+// Test the drive() method
+console.log(
+  "Stretch 3: Expected value: 250 | Returned value:",
+  corvette.drive(200)
+);
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
 function foo() {
